@@ -1,0 +1,16 @@
+on: [push, pull_request_target]
+
+name: test
+
+jobs:
+  unit-test:
+    runs-on: ubuntu-18.04
+
+    steps:
+      - name: checkout
+        uses: actions/checkout@5a4ac9002d0be2fb38bd78e4b4dbde5606d7042f  # v2.3.4
+        with:
+          fetch-depth: 1
+          
+      - name: Log into container registry
+        run: echo "foobar"
